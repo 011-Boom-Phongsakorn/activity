@@ -13,6 +13,10 @@ class User {
         this.email = email
     }
 
+    public getName(): string{
+        return this.name
+    }
+
     public register(username: string, password: string): boolean{
         if(username && password){
             return true

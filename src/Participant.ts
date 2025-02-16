@@ -5,8 +5,18 @@ import { Registration } from "./Registration";
 import { User } from "./User";
 
 class Participant extends User {
-    constructor(username: string, password: string, name: string, role: string, email: string){
+    private status: string
+    constructor(username: string, password: string, name: string, role: string, email: string, status: string){
         super(username, password, name, role, email)
+        this.status = status
+    }
+
+    public getStatus(): string{
+        return this.status
+    }
+
+    public setStatus(status: string): void{
+        this.status = status
     }
 
     public searchActivity(): Activity[]{

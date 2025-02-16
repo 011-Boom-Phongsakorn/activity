@@ -1,3 +1,4 @@
+import { Certificate } from "./Certificate"
 import { Instructor } from "./Instructor"
 
 class Activity {
@@ -66,7 +67,42 @@ class Activity {
         Activity.activities.push(newActivity)
         return newActivity
     }
-    
+
+    public updateActivity(activityId: number, name: string, organizer: string, maxParticipant: number, activityPeriod: string, registrationPeriod: string, status: string, approvalRequired: boolean, certificateIssued: boolean, instructor: Instructor, schedule: string): void{
+        this.activityId = activityId
+        this.name = name
+        this.organizer = organizer
+        this.maxParticipant = maxParticipant
+        this.activityPeriod = activityPeriod
+        this.registrationPeriod = registrationPeriod
+        this.status = status
+        this.certificateIssued = certificateIssued
+        this.approvalRequired = approvalRequired
+        this.instructor = instructor
+        this.schedule = schedule
+    }
+
+    public deleteActivity(activityId: number): string{
+        if(this.activityId === activityId){
+            return `Deleted The Activity Succuessfully.`
+        }else{
+            return `Can not delete the activity : ${new Error()}`
+        }
+    }
+
+    public publishActivity(status: string): void{
+        this.status = status
+    }
+
+    public approvePaticipant(): void{
+         
+    }
+
+    public generateCertificate(): Certificate{
+        let issuer = new Instructor('t1', 'tpass', 'tname', 'teacher', 't@gmail.com')
+        let certificate = new Certificate(1, 'content', issuer, 'signature', 'template')
+        return certificate
+    }
 }
 
 export { Activity }

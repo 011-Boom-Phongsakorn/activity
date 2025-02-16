@@ -12,7 +12,7 @@ console.log(user.toString())
 console.log('####################')
 
 console.log('####################')
-const participant = new Participant('Phongsakorn', 'p456', 'Boom', 'student', 'lilith.zny@gmail.com')
+const participant = new Participant('Phongsakorn', 'p456', 'Boom', 'student', 'lilith.zny@gmail.com', 'pending')
 console.log(participant.toString())
 console.log('####################')
 

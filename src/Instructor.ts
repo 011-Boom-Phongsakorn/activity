@@ -1,4 +1,6 @@
 import { Activity } from "./Activity"
+import { Participant } from "./Participant"
+import { Registration } from "./Registration"
 import { User } from "./User"
 
 class Instructor extends User {
@@ -20,6 +22,28 @@ class Instructor extends User {
             this,
             "09:00 - 17:00"
         )
+        return activity
+    }
+
+    // public approveParticipant(participants: Participant[]): void{
+    //     for(let i = 0; i < participants.length; i++) {
+    //         if(participants[i].getStatus() === 'pending'){
+    //             participants[i].setStatus('approve')
+    //             console.log(`Approved Participant | ${participants[i].getName()}`)
+    //         }
+    //     }
+    // }
+
+    public approveParticipant(): void{
+
+    }
+
+    public issueCertificate(): void{
+        
+    }
+
+    public searchActivity(): Activity[] {
+        let activity = Activity.searchActivity()
         return activity
     }
 }
